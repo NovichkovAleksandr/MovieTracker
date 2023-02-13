@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Home page</title>
+</head>
+<body>
+<a th:href="@{/homepage/people}">All people</a>
+only admin
+<br/>
+<a th:href="@{/homepage/movies}">All movies</a>
+<br/>
+<a th:href="@{/homepage/myMovies}">My movies</a>
+<br/>
+<form th:action="@{/logout}" th:method="POST">
+  <input type="submit" value="Logout" />
+</body>
+</html>

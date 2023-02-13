@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/homepage/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <p th:text="${'User id: ' + person.getId()}">VALUE</p>
+    <p th:text="${'Username: ' + person.getUsername()}">VALUE</p>
+    <label for="role">Enter role: </label>
+    <input type="text" th:field="*{role}" id="role"/>
+    <input type="submit" value="Edit"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/homepage/people/{id}(id=${person.getId()})}">
+      <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

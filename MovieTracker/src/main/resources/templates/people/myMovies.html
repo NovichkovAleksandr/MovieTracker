@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My movies</title>
+</head>
+<body>
+
+<form th:method="GET" th:action="@{/homepage/myMovies/new}">
+    <input type="submit" value="Add movie"/>
+</form>
+<div th:each="movie : ${movies}">
+  <a th:text="${movie.getMovieName() + ', ' + movie.getGenre() + ', ' + movie.getDuration()}">movie</a>
+
+</body>
+</html>

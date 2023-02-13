@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New movie</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/homepage/myMovies/new}" th:object="${movie}">
+  <label for="movieName">Enter moviename: </label>
+  <input type="text" th:field="*{movieName}" id="movieName"/>
+  <div style="color:red" th:if="${#fields.hasErrors('movieName')}" th:errors="*{movieName}">Name error</div>
+  <br/>
+  <label for="genre">Enter genre: </label>
+  <input type="text" th:field="*{genre}" id="genre"/>
+  <div style="color:red" th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">Genre error</div>
+  <br/>
+  <label for="duration">Enter the length of the movie in minutes: </label>
+  <input type="number" th:field="*{duration}" id="duration"/>
+  <div style="color:red" th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}">Duration error</div>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>
